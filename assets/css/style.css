@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'RockSalt';
+  font-style: normal;
+  font-weight: 400;
+  src:
+  	local('Rock Salt Regular'),
+  	local('RockSalt-Regular'),
+  	url(https://fonts.gstatic.com/s/rocksalt/v7/Q94aHXFHGip10K5uxi1jOJBw1xU1rKptJj_0jans920.woff2)
+  	format('woff2');
+  unicode-range: 
+  	U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
 body
 {
 	font-family: verdana;
@@ -11,10 +24,21 @@ h1
 	padding: 15px;
 }
 
+p
+{
+	margin-bottom: 2px;
+}
+
 .jumbotron
 {
 	margin-top: 15px;
 	background-color: #F3ECE2;
+	margin-bottom: 25px;
+}
+
+#searchFields
+{
+	background-color: #E2E9F3;
 }
 
 fieldset
@@ -35,7 +59,7 @@ button
 #actionButtons
 {
 	margin-top: 100px;
-	margin-bottom: 75px;
+	margin-bottom: 20px;
 }
 
 #qParameter
@@ -43,19 +67,22 @@ button
 	width: 50%;
 }
 
-h2 
-{
-	font-size: 2.2em;
-	font-weight: bolder;
-	text-align: center;
-	padding: 25px;
-}
-
-#searchResults
+#searchResults,
+#searchResultsHeader,
+#resultsContainer
 {
 	display: none;
 }
 
+#searchResultsHeader
+{
+	font-family: RockSalt;
+	font-size: 3.5em;
+	text-align: center;
+	padding: 25px;
+	margin-bottom: 60px;
+
+}
 
 
 
