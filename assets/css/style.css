@@ -1,0 +1,65 @@
+body
+{
+	font-family: verdana;
+}
+
+h1
+{
+	text-align: center;
+	font-size: 3em;
+	font-weight: bolder;
+	padding: 15px;
+}
+
+.jumbotron
+{
+	margin-top: 15px;
+	background-color: #F3ECE2;
+}
+
+fieldset
+{
+	margin-bottom: 20px;
+}
+
+input
+{
+	border-radius: 7px;
+}
+
+button
+{
+	margin-right: 15px;
+}
+
+#actionButtons
+{
+	margin-top: 100px;
+	margin-bottom: 75px;
+}
+
+#qParameter
+{
+	width: 50%;
+}
+
+h2 
+{
+	font-size: 2.2em;
+	font-weight: bolder;
+	text-align: center;
+	padding: 25px;
+}
+
+#searchResults
+{
+	display: none;
+}
+
+
+
+
+
+
+
+

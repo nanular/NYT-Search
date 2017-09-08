@@ -16,8 +16,48 @@
 
 	<body>
 	
-	<h1>The New York Times</h1>
+	<div class="jumbotron container">
+		<h1>The New York Times<br><small>Article Search</small></h1>
+
+	</div>
+
+	<div id="searchFields" class="jumbotron container">
+		
+		<fieldset>
+			<label>Search Term:</label><br>
+			<input type="text" name="queryTerm" id="qParameter"><br>
+		</fieldset>
+
+		<fieldset>
+			<label>Earliest Publication Date:</label><br>
+			<input type="date" name="beginDate"><br>
+		</fieldset>
+
+		<fieldset>
+			<label>Latest Publication Date:</label><br>
+			<input type="date" name="endDate"><br>
+		</fieldset>
+
+
+
+		<div id="actionButtons">
+			<button class="btn btn-primary" type="submit" id="searchButton">Search</button>
+			<button class="btn btn-warning" type="button" id="clearButton">Clear Results</button>	
+		</div>
+
+
 	
+		<div id="searchResults">
+		
+		
+
+			
+		</div>
+
+
+
+
+	</div>
 	
 
 
@@ -40,8 +80,8 @@
 	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 	crossorigin="anonymous"></script>
 
-	<!-- app.js File -->
-	<script src="assets/javascript/app.js"></script>	
+	<!-- api.js File -->
+	<script src="assets/javascript/api.js"></script>	
 
 	</body>
 </html>	

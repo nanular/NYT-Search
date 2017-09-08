@@ -1,3 +1,23 @@
+NYT API KEY: f05a7362fdb341b3b69c4aa99b704d34
+
+Parameter: q
+Type: string
+Syntax:	?q=yourSearchStringHere
+
+Parameter: begin_date
+Type: string
+Syntax: ?begin_date=20170901
+
+Parameter: end_date
+Type: string
+Syntax: ?end_date=20170901
+
+Parameter: sort
+Type: string
+Values: newest, oldest
+Syntax: ?sort=newest
+
+
 # New York Times Article Search - Phase 01
 
 ## Front-End Team
