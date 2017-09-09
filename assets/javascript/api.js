@@ -3,21 +3,50 @@ $(document).ready(function()
 
 var toSearch = 
 {
-	baseURL: "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=",
-	apiKey: "f05a7362fdb341b3b69c4aa99b704d34",
+	baseURL: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
+	apiKey: "?api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931",
 	q: "&?q=suicide",
-	begin: "&?begin_date=20170101",
-	end: "&?end_date=20171231",
+	begin: "&?begin_date=19500101",
+	end: "&?end_date=20170908",
+	sort: "&sort=newest"
 }
 
 
 
 $("#searchButton").click(function()
 {
-	var queryURL = toSearch.baseURL + toSearch.apiKey + toSearch.q + toSearch.begin + toSearch.end;
+	var currentQuery = $("#qParameter").val().trim();
+	toSearch.q = "&fq=" + currentQuery;
+	var startDate = $("#beginDate").val().split("-");
+	toSearch.begin = "&being_date=" + startDate[0] + startDate[1] + startDate[2];
+	var endingDate = $("#endDate").val().split("-");
+	toSearch.end = "&end_date=" + endingDate[0] + endingDate[1] + endingDate[2];
+
+	var queryURL = toSearch.baseURL + toSearch.apiKey + toSearch.q + toSearch.begin + toSearch.end + toSearch.sort;
 	console.log(queryURL);
 
-	$.ajax
+	$.ajax(
+	{
+  		url: queryURL,
+  		method: "GET",
+	})
+
+	.done(function(apireturn)
+	{
+  		console.log(apireturn);
+
+  		var heading = $("<h3>").addClass("subHeading")
+
+
+
+
+
+
+
+
+	})
+
+/*	$.ajax
 	({
 		url: queryURL,
 		method: "GET"
@@ -59,16 +88,8 @@ $("#searchButton").click(function()
 			$("#searchResults").append(articleDiv)
 			//$("#searchResults").append("<br><br><br>");
 
-			}
+			}*/
 
-
-
-
-
-
-
-			//for (var i = 0; i < results.length; i++)
-			//{
 				
 
 
@@ -79,13 +100,10 @@ $("#searchButton").click(function()
 			
 
 
+	//	});
 
 
-
-		});
-
-
-});
+})
 
 
 

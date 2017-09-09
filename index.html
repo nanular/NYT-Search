@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<title>NYT Search API</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link rel="stylesheet"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
-		crossorigin="anonymous">
+<head>
+	<title>NYT API Search</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">	
-	</head>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.alt.css">	
+</head>
 
-	<body>
+<body>
 	
-	<div class="jumbotron container">
-		<h1>The New York Times<br><small>Article Search</small></h1>
+	<div class="grid">
+		<header class="title_bar">
+			<h1>The New York Times</h1>
+		</header>
 
-	</div>
-
-	<div id="searchFields" class="jumbotron container">
-		
-		<fieldset>
-			<label>Search Term:</label><br>
-			<input type="text" name="queryTerm" id="qParameter"><br>
-		</fieldset>
-
-		<fieldset>
-			<label>Earliest Publication Date:</label><br>
-			<input type="date" name="beginDate"><br>
-		</fieldset>
-
-		<fieldset>
-			<label>Latest Publication Date:</label><br>
-			<input type="date" name="endDate"><br>
-		</fieldset>
-
-
-
-		<div id="actionButtons">
-			<button class="btn btn-primary" type="submit" id="searchButton">Search</button>
-			<button class="btn btn-warning" type="button" id="clearButton">Clear Results</button>	
+		<div class="upper_right_hand nested">
+			<div class="apilogo">
+			<a href="http://developer.nytimes.com/" target="_blank">
+				<img id="apiLogo" src="assets/images/poweredby_nytimes_65b.png"></a>
+			</div>
+			
+			<p class="powered_by">
+				<br><small>Powered by the<br>New York Times<br>Article Search API</small>
+			</p>
 		</div>
+
+		<div class="search_inputs">
+
+			<h3 class="subHeadings">Search Articles</h3>
+				<form>
+					<p>
+						<label>Search</label><br>
+						<input type="text" name="queryTerm" id="qParameter"><br>
+					</p>
+
+					<div class="luceneCheckbox">
+						<input type="checkbox" value="none" id="luceneCheckbox" name="check" checked>
+      				<label for="luceneCheckbox">Enable Lucene Syntax</label>
+					</div>
+
+					<p>
+						<label>Earliest Publication Date</label><br>
+						<input id="beginDate" type="date" name="begin_date" value="1980-01-01"><br>
+					</p>	
+
+					<p>
+						<label>Latest Publication Date</label><br>
+						<input id="endDate" type="date" name="end_date" value="2018-01-01"><br>
+					</p>
+
+					<div id="actionButtons">
+						<button class="btn" type="button" id="searchButton">Search</button>
+						<button class="btn" type="button" id="clearButton">Clear Results</button>	
+					</div>
+				</form>
+			</div>
+
+		<div class="search_results">
+			<h3 class="subHeadings">Search Results</h3>
+			
+
+
+		</div>
+
+		<footer class="page_footer">
+
+		</footer>
+
 	</div>
 
 
-	<div class="jumbotron container" id="resultsContainer">
-		<h2 id="searchResultsHeader">NYT Search Results</h2>
-		<div id="searchResults"></div>
-	</div>
 
 
 
@@ -59,21 +82,16 @@
 
 
 
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
-	<!-- Popper.js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" 
-	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" 
-	crossorigin="anonymous"></script>
-    
-	<!-- Bootstrap JS -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" 
-	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-	crossorigin="anonymous"></script>
+	
 
-	<!-- api.js File -->
-	<script src="assets/javascript/api.js"></script>	
 
-	</body>
-</html>	
+
+
+
+<!-- Script Links -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/api.js"></script>	
+
+</body>
+</html>		
