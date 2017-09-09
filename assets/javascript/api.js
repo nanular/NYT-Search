@@ -5,7 +5,7 @@ var toSearch =
 {
 	baseURL: "https://api.nytimes.com/svc/search/v2/articlesearch.json",
 	apiKey: "?api-key=b9f91d369ff59547cd47b931d8cbc56b:0:74623931",
-	q: "&?q=suicide",
+	q: "&?fq=politics",
 	begin: "&?begin_date=19500101",
 	end: "&?end_date=20170908",
 	sort: "&sort=newest"
@@ -33,15 +33,38 @@ $("#searchButton").click(function()
 
 	.done(function(apireturn)
 	{
-  		console.log(apireturn);
-
-  		var heading = $("<h3>").addClass("subHeading")
-
+  		var results = apireturn.response.docs;
+  		$(".subHeadings:last-child").show();
 
 
+  		for(i = 0; i < results.length; i++)
+  		{
+	  		var articleDiv = $("<div>").addClass("article_result");
 
+	  		var articleTitle = $("<h4>")
+	  			.addClass("article_title")
+	  			.html('<a href="' + results[i].web_url +
+	  				'" target="blank">' + results[i].headline.main + '</a>')
+	  			.appendTo(articleDiv);
 
-
+	  		var articleDate = $("<span>")
+	  			.addClass("article_date")
+	  			.text(
+	  				"Publish Date: " +
+		  			(results[i].pub_date).slice(5, 7) + "/" +
+		  			(results[i].pub_date).slice(8, 10) + "/" +
+		  			(results[i].pub_date).slice(0, 4)
+		  		)
+		  		.append("<br><br>")
+		  		.appendTo(articleDiv);
+	  		
+	  		var articleSnippet = $("<p>")
+	  			.addClass("article_snippet")
+	  			.text(results[i].snippet)
+	  			.appendTo(articleDiv);
+	  		
+	  		$(".search_results").append(articleDiv);
+  		}
 
 
 	})
